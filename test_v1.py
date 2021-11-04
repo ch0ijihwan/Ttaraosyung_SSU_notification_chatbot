@@ -1,8 +1,5 @@
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
-from datetime import date
-import urllib.request
-import json
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
