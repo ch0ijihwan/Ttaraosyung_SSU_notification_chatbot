@@ -128,13 +128,7 @@ def food_func():
     user_menu = user_menu['block']
     user_menu = user_menu['name']
 
-    # url = "https://soongguri.com/main.php?mkey=2&w=3&l=1"
-    # res = requests.get(url)
-    # soup = BeautifulSoup(res.content.decode('utf-8', 'replace'), "html.parser")
-    # if "자동등록방지" in soup.text:
-    #   print("캡챠 실행됨")
-    #  print(driver.page_source)
-    # driver.find_element_by_tag_name("input").click()
+
     res = driver.page_source
     soup = BeautifulSoup(res, 'html.parser')
     # print("끝")
