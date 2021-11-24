@@ -1,8 +1,10 @@
-import re
-
-import requests
-from bs4 import BeautifulSoup
 from flask import Flask, request, jsonify
+from bs4 import BeautifulSoup
+from datetime import date
+import re
+import urllib.request
+import json
+import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -79,7 +81,6 @@ def test(s):
     hangul = re.compile('[^ ㄱ-ㅣ가-힣+]')
     result = hangul.sub('', tokens)
     return result
-
 
 @app.route('/notice', methods=['GET', 'POST'])
 def notice_func():
