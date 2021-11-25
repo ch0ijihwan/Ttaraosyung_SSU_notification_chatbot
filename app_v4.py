@@ -43,11 +43,11 @@ def food_func():
     trs = table.find_all("tr")
     dodam_trs = trs[14]
 
-    qkq = dodam_trs.find("b")
+    qkq = dodam_trs.find_all("b")
 
     print(qkq)
 
-    dodam = "[오늘의 도담식당 메뉴] : \n\n\n\n" + test(qkq)
+    dodam = "[오늘의 도담식당 메뉴] : \n\n\n\n" + test(qkq[0]) + test(qkq[1])
 
     answer = dodam
     print(answer)
@@ -179,51 +179,6 @@ def notice_func():
         }
     }
 
-    return jsonify(res)
-
-
-@app.route('/notice', methods=['GET', 'POST'])
-def notice_func():
-    html = requests.get('https://search.naver.com/search.naver?query=날씨')
-    soup = BeautifulSoup(html.text, 'html.parser')
-    data1 = soup.find('div', {'class': 'weather_box'})
-    find_address = data1.find('span', {'class': 'btn_select'}).text
-    print('현재 위치: ' + find_address)
-    find_currenttemp = data1.find('span', {'class': 'todaytemp'}).text
-    print('현재 온도: ' + find_currenttemp + '℃')
-    data2 = data1.findAll('dd')
-    find_dust = data2[0].find('span', {'class': 'num'}).text
-    find_ultra_dust = data2[1].find('span', {'class': 'num'}).text
-    find_ozone = data2[2].find('span', {'class': 'num'}).text
-    print('현재 미세먼지: ' + find_dust)
-    print('현재 초미세먼지: ' + find_ultra_dust)
-    print('현재 오존지수: ' + find_ozone)
-
-    answer = "현재 위치 : " + find_address + "\n"
-    + "현재 온도 : " + find_currenttemp+"℃" + "\n"
-    + "현재 미세먼지 : " + find_dust+ "\n"
-    + "현재 초미세먼지 : " + find_ultra_dust + "\n"
-    + "현재 오존지수 : " + find_ozone + "\n"
-
-    res = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "simpleText": {
-                        "text": answer
-                    }
-                }
-            ],
-            'quickReplies': [
-                {
-                    'label': '🏠',
-                    'action': 'message',
-                    'messageText': '🏠'
-                }
-            ]
-        }
-    }
     return jsonify(res)
 
 # 메인 함수
