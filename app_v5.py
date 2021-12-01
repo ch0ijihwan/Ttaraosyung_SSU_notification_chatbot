@@ -52,8 +52,6 @@ def food_func():
         dodam = "[오늘의 도담식당 메뉴] : \n\n\n\n" + test(qkq[0]) + test(qkq[1])
 
 
-
-
     answer = dodam
     print(answer)
 
