@@ -46,11 +46,10 @@ def food_func():
     qkq = dodam_trs.find_all("b")
 
     qkqList = list(qkq)
-    if(len(qkqList) == 0):
+    if (len(qkqList) == 0):
         dodam = "[오늘의 도담식당 메뉴] : \n\n\n\n" + "오늘은 메뉴가 없습니다."
     else:
         dodam = "[오늘의 도담식당 메뉴] : \n\n\n\n" + test(qkq[0]) + test(qkq[1])
-
 
     answer = dodam
     print(answer)
@@ -183,6 +182,7 @@ def notice_func():
     }
 
     return jsonify(res)
+
 
 # 메인 함수
 if __name__ == '__main__':
