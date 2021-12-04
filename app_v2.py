@@ -14,12 +14,20 @@ options.add_argument("--no-sandbox")
 options.add_argument("disable-gpu")
 options.add_argument("disable-infobars")
 options.add_argument("--disable-extensions")
-prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}
+prefs = {
+    'profile.default_content_setting_values': {'cookies': 2, 'images': 2, 'plugins': 2, 'popups': 2, 'geolocation': 2,
+                                               'notifications': 2, 'auto_select_certificate': 2, 'fullscreen': 2,
+                                               'mouselock': 2, 'mixed_script': 2, 'media_stream': 2,
+                                               'media_stream_mic': 2, 'media_stream_camera': 2, 'protocol_handlers': 2,
+                                               'ppapi_broker': 2, 'automatic_downloads': 2, 'midi_sysex': 2,
+                                               'push_messaging': 2, 'ssl_cert_decisions': 2,
+                                               'metro_switch_to_desktop': 2, 'protected_media_identifier': 2,
+                                               'app_banner': 2, 'site_engagement': 2, 'durable_storage': 2}}
 options.add_experimental_option('prefs', prefs)
 driver = webdriver.Chrome(options=options)
 
-
 driver.get("https://soongguri.com/main.php?mkey=2&w=3&l=1")
+
 
 @app.route('/notice', methods=['GET', 'POST'])
 def notice_func():
@@ -92,7 +100,7 @@ def notice_func():
                                 "thumbnail": {
                                     "imageUrl": "http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg"
                                 },
-                               "buttons": [
+                                "buttons": [
                                     {
                                         "action": "webLink",
                                         "label": "보러가기",
@@ -121,13 +129,13 @@ def notice_func():
 
     return jsonify(res)
 
+
 @app.route('/food', methods=['GET', 'POST'])
 def food_func():
     req = request.get_json()
     user_menu = req['userRequest']
     user_menu = user_menu['block']
     user_menu = user_menu['name']
-
 
     res = driver.page_source
     soup = BeautifulSoup(res, 'html.parser')
@@ -233,6 +241,7 @@ def food_func():
         }
     }
     return jsonify(res)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, threaded=True)
