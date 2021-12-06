@@ -51,3 +51,8 @@
  https://www.youtube.com/watch?v=kWiCuklohdY
 - 파이썬 웹개발 Flask #1 - 플라스크 기초 및 웹서버 개발의 개념 이해
   https://www.youtube.com/watch?v=u2KnTZa1_WU
+- 파이썬 코딩 무료 강의 (활용편3) - 웹 크롤링? 웹 스크래핑! 제가 가진 모든 비법을 알려드리겠습니다. [나도코딩]
+  https://www.youtube.com/watch?v=yQ20jZwDjTE
+- 카카오 i 오픈빌더 도움말(카카오 오픈 빌더 공식 API 문서)
+  https://i.kakao.com/docs/getting-started-overview#%EC%98%A4%ED%94%88%EB%B9%8C%EB%8D%94-%EC%86%8C%EA%B0%9C
+ 
