@@ -29,8 +29,6 @@ driver.get("https://soongguri.com/main.php?mkey=2&w=3&l=1")
 
 @app.route('/food', methods=['GET', 'POST'])
 def food_func():
-    # req = request.get_json()
-
     url = "https://soongguri.com/main.php?mkey=2&w=3&l=1"
     res = requests.get(url)
 
