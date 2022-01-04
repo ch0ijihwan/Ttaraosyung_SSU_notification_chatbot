@@ -66,9 +66,9 @@ def food_func():
             ],
             'quickReplies': [
                 {
-                    'label': '🏠',
+                    'label': '홈으로 가기',
                     'action': 'message',
-                    'messageText': '🏠'
+                    'messageText': '홈으로 가기'
                 }
             ]
         }
