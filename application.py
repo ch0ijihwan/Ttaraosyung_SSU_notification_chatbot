@@ -44,9 +44,9 @@ def food_func():
 
     qkqList = list(qkq)
     if (len(qkqList) == 0):
-        dodam = "[오늘의 도담식당 메뉴] : \n\n" + "오늘은 메뉴가 없습니다."
+        dodam = "[오늘의 도담 식당 메뉴] : \n\n" + "오늘은 메뉴가 없습니다."
     else:
-        dodam = "[오늘의 도담식당 메뉴] : \n\n" + test(qkq[0]) + test(qkq[1])
+        dodam = "[오늘의 도담 식당 메뉴] : \n\n" + test(qkq[0]) + test(qkq[1])
 
     answer = dodam
     print(answer)
